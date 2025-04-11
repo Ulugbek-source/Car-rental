@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./css/main.css" />
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+		<title>Car rental</title>
+		<style type="text/tailwindcss">
+			@layer utilities {
+			}
+		</style>
+	</head>
+	<body>
+		<header class="py-[27px] md:py-[18px] border-b-[1.5px] border-[#e5e7ea]">
+			<div class="containers flex items-center justify-between">
+				<div class="flex items-center gap-5">
+					<a href="/">
+						<img
+							src="./images/logo.svg"
+							alt="Logo image"
+							width="150"
+							height="40"
+						/>
+					</a>
+					<nav class="hidden xl:flex items-center">
+						<a
+							class="hover:text-[#299764] duration-300 py-[18px] px-4 text-[18px] font-medium text-[#000000]"
+							href="#"
+							>Categories</a
+						>
+						<a
+							class="hover:text-[#299764] duration-300 py-[18px] px-4 text-[18px] font-medium text-[#000000] flex items-center gap-[14px]"
+							href="#"
+							><span>About us</span>
+							<svg
+								width="10"
+								height="6"
+								viewBox="0 0 10 6"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path
+									fill-rule="evenodd"
+									clip-rule="evenodd"
+									d="M9.15284 0.222116C9.42133 0.490602 9.42133 0.925902 9.15284 1.19439L5.48618 4.86105C5.21769 5.12954 4.78239 5.12954 4.51391 4.86105L0.847238 1.19439C0.578753 0.925903 0.578753 0.490602 0.847238 0.222116C1.11572 -0.0463691 1.55102 -0.0463691 1.81951 0.222116L5.00004 3.40265L8.18057 0.222116C8.44906 -0.0463694 8.88436 -0.0463694 9.15284 0.222116Z"
+									fill="currentColor"
+								/>
+							</svg>
+						</a>
+						<a
+							class="hover:text-[#299764] duration-300 py-[18px] px-4 text-[18px] font-medium text-[#000000] flex items-center gap-[14px]"
+							href="#"
+							><span>Help center</span>
+							<svg
+								width="10"
+								height="6"
+								viewBox="0 0 10 6"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path
+									fill-rule="evenodd"
+									clip-rule="evenodd"
+									d="M9.15284 0.222116C9.42133 0.490602 9.42133 0.925902 9.15284 1.19439L5.48618 4.86105C5.21769 5.12954 4.78239 5.12954 4.51391 4.86105L0.847238 1.19439C0.578753 0.925903 0.578753 0.490602 0.847238 0.222116C1.11572 -0.0463691 1.55102 -0.0463691 1.81951 0.222116L5.00004 3.40265L8.18057 0.222116C8.44906 -0.0463694 8.88436 -0.0463694 9.15284 0.222116Z"
+									fill="currentColor"
+								/>
+							</svg>
+						</a>
+					</nav>
+				</div>
+				<div class="flex items-center gap-6">
+					<a
+						class="hover:text-[#299764] duration-300 hidden md:block text-[16px] text-[#000000] font-semibold"
+						href="tel:+18554200000"
+						>+1 855 420 0000</a
+					>
+					<button
+						class="hover:bg-[#299764] hover:text-white duration-300 hidden md:flex w-[58px] h-[58px] rounded-full bg-[#f5f5f5] items-center justify-center"
+					>
+						<svg
+							width="16"
+							height="16"
+							viewBox="0 0 16 16"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path
+								d="M7.99998 0.208252C3.69676 0.208252 0.208313 3.6967 0.208313 7.99992C0.208313 12.3031 3.69676 15.7916 7.99998 15.7916C12.0495 15.7916 15.377 12.7027 15.7558 8.75226C15.7734 8.56841 15.6789 8.39193 15.5162 8.30463C15.3534 8.21732 15.1541 8.23624 15.0107 8.35262C14.2227 8.99207 13.2192 9.37492 12.125 9.37492C9.59367 9.37492 7.54165 7.32289 7.54165 4.79158C7.54165 3.28816 8.26503 1.9538 9.38468 1.11728C9.53272 1.00667 9.59986 0.817986 9.55496 0.63873C9.51005 0.459475 9.36189 0.324721 9.17919 0.296971C8.79438 0.238522 8.40057 0.208252 7.99998 0.208252Z"
+								fill="currentColor"
+							/>
+						</svg>
+					</button>
+					<button
+						class="hover:bg-transparent hover:border-[#299764] hover:text-[#299764] duration-300 border-[1.5px] border-transparent hidden md:flex items-center gap-2 bg-[#299764] text-white font-medium text-[18px] rounded-[100px] py-[18px] px-[30px]"
+					>
+						<span>Login</span>
+						<svg
+							width="22"
+							height="22"
+							viewBox="0 0 22 22"
+							fill="currentColor"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path
+								d="M10.3125 17.4166C10.3125 17.0369 10.6203 16.7291 11 16.7291H16.5C16.6265 16.7291 16.7291 16.6265 16.7291 16.4999L16.7291 5.49992C16.7291 5.37335 16.6265 5.27075 16.5 5.27075L11 5.27075C10.6203 5.27075 10.3125 4.96295 10.3125 4.58325C10.3125 4.20356 10.6203 3.89575 11 3.89575H16.5C17.3859 3.89575 18.1041 4.61396 18.1041 5.49992V16.4999C18.1041 17.3859 17.3859 18.1041 16.5 18.1041H11C10.6203 18.1041 10.3125 17.7963 10.3125 17.4166Z"
+								fill="currentColor"
+							/>
+							<path
+								d="M3.20831 12.0222C3.20831 12.5285 3.61872 12.9389 4.12498 12.9389H8.5763C8.59732 13.2647 8.62363 13.5902 8.65524 13.9154L8.68243 14.1952C8.72664 14.65 9.20968 14.9225 9.62183 14.7249C11.2974 13.9219 12.8143 12.8231 14.0995 11.4812L14.127 11.4525C14.3718 11.1969 14.3718 10.7937 14.127 10.5381L14.0995 10.5094C12.8143 9.16753 11.2974 8.06866 9.62183 7.26564C9.20969 7.06812 8.72664 7.34055 8.68243 7.79544L8.65524 8.0752C8.62363 8.40037 8.59732 8.72592 8.5763 9.05173L4.12498 9.05173C3.61872 9.05173 3.20831 9.46214 3.20831 9.9684V12.0222Z"
+								fill="currentColor"
+							/>
+						</svg>
+					</button>
+					<button class="xl:hidden">
+						<img
+							src="./images/menu.svg"
+							alt="Menu image"
+							width="40"
+							height="20"
+						/>
+					</button>
+				</div>
+			</div>
+		</header>
+		<main>
+			<section class="pt-5 pb-[133px] px-[20px] md:px-0">
+				<div class="containers relative hero rounded-[20px] !pt-[60px]">
+					<div class="sm:w-[416px] mx-auto text-center">
+						<h2
+							class="font-semibold text-[24px] sm:text-[36px] text-white mb-[10px]"
+						>
+							Compact cars
+						</h2>
+						<p class="text-[12px] sm:text-[16px] text-white">
+							Rent cars as you are comfortable and where you are comfortable.
+						</p>
+					</div>
+					<form
+						class="w-full md:w-[600px] absolute right-0 left-0 mx-auto bottom-[-35px] shadow-lg rounded-[100px] overflow-hidden"
+						autocomplete="off"
+						method="get"
+					>
+						<input
+							class="text-[18px] focus:shadow-lg focus:shadow-[#299764] duration-300 font-medium outline-none w-full py-[22px] pl-[30px] placeholder:text-[18px] placeholder:font-medium placeholder:text-[#555555]"
+							aria-label="Search..."
+							type="text"
+							placeholder="Find the car of your dreams"
+							name="search"
+							required
+						/>
+						<button
+							class="border-[1.5px] border-transparent duration-300 hover:border-[#299764] hover:text-[#299764] hover:bg-transparent absolute top-0 bottom-0 right-1 my-auto w-[58px] h-[58px] rounded-full bg-[#299764] text-white flex items-center justify-center"
+							type="submit"
+						>
+							<svg
+								width="18"
+								height="18"
+								viewBox="0 0 18 18"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path
+									fill-rule="evenodd"
+									clip-rule="evenodd"
+									d="M11.3851 12.4458C8.73482 14.5685 4.85538 14.4014 2.3986 11.9446C-0.23744 9.30856 -0.23744 5.0347 2.3986 2.39866C5.03464 -0.237379 9.3085 -0.237379 11.9445 2.39866C14.4013 4.85544 14.5684 8.73487 12.4457 11.3851L17.6014 16.5408C17.8943 16.8337 17.8943 17.3085 17.6014 17.6014C17.3085 17.8943 16.8336 17.8943 16.5407 17.6014L11.3851 12.4458ZM3.45926 10.8839C1.40901 8.83369 1.40901 5.50957 3.45926 3.45932C5.50951 1.40907 8.83363 1.40907 10.8839 3.45932C12.9326 5.50807 12.9341 8.82881 10.8884 10.8794C10.8869 10.8809 10.8854 10.8824 10.8839 10.8839C10.8824 10.8854 10.8809 10.8869 10.8794 10.8884C8.82876 12.9342 5.50801 12.9327 3.45926 10.8839Z"
+									fill="currentColor"
+								/>
+							</svg>
+						</button>
+					</form>
+				</div>
+			</section>
+			<section class="pb-[120px] md:pb-[160px]">
+				<div class="containers">
+					<div class="w-[327px] sm:w-[575px] mx-auto text-center mb-[40px]">
+						<h2
+							class="font-semibold text-[24px] text-[#000000] leading-[100%] mb-[10px]"
+						>
+							Choose the car of your dreams
+						</h2>
+						<p class="font-normal text-[16px] text-[#555555] leading-[24px]">
+							We provide our customers with the most incredible driving
+							emotions. That is why there are only world-class cars in our fleet
+						</p>
+					</div>
+					<div class="">
+						<div
+							class="w-[328px] sm:w-[476px] flex items-center gap-[14px] mx-auto mb-[24px]"
+						>
+							<a
+								class="hover:text-[#299764] hover:bg-transparent hover:border-[#299764] duration-300 border-[1.5px] py-[14px] px-[20px] sm:py-[19px] sm:px-[40px] w-[106px] sm:w-[140px] flex items-center justify-center font-medium text-[12px] sm:text-[16px] text-[#FFFFFF] leading-[100%] bg-[#299764] rounded-[100px]"
+								href="#"
+								>Compact</a
+							>
+							<a
+								class="hover:text-[#ffffff] hover:bg-[#299764] duration-300 py-[14px] px-[20px] sm:py-[19px] sm:px-[40px] w-[119px] sm:w-[173px] flex items-center justify-center font-medium text-[12px] sm:text-[16px] text-[#000000] leading-[100%] rounded-[100px] border-[1.5px] border-[#e5e7ea]"
+								href="#"
+								>Sports cars</a
+							>
+							<a
+								class="hover:text-[#ffffff] hover:bg-[#299764] duration-300 py-[14px] px-[20px] sm:py-[19px] sm:px-[40px] w-[75px] sm:w-[116px] flex items-center justify-center font-medium text-[12px] sm:text-[16px] text-[#000000] leading-[100%] rounded-[100px] border-[1.5px] border-[#E5E7EA]"
+								href="#"
+								>Vans
+							</a>
+						</div>
+						<div class="flex flex-wrap gap-[20px] mb-[40px]">
+							<div
+								data-aos="flip-left"
+								class="w-full sm:max-w-[300px] py-[30px] px-[24px] bg-[#f5f5f5] md:max-w-[373px] rounded-[16px]"
+							>
+								<h3
+									class="font-semibold text-[24px] text-[#000000] leading-[100%]"
+								>
+									Ford Fiesta
+								</h3>
+								<span
+									class="font-medium text-[16px] leading-[100%] text-[#555555]"
+									>Economy Car</span
+								>
+								<img src="./images/ford-fiesta.png" alt="Ford fiesta image" />
+								<div class="flex items-center gap-[60px]">
+									<div class="">
+										<div class="flex items-center gap-[12px]">
+											<img src="./images/card-image-1.png" alt="card image" />
+											<span
+												class="font-medium text-[12px] md:text-[16px] text-[#000000]"
+												>5 Seats</span
+											>
+										</div>
+										<div class="flex items-center gap-[12px]">
+											<img src="./images/card-image-2.png" alt="card image" />
+											<span
+												class="font-medium text-[12px] md:text-[14px] text-[#000000]"
+												>21+ Years</span
+											>
+										</div>
+									</div>
+									<div class="">
+										<div class="flex items-center gap-[12px]">
+											<img src="./images/card-image-3.png" alt="card image" />
+											<span
+												class="font-medium text-[12px] md:text-[16px] text-[#000000]"
+												>Automatic</span
+											>
+										</div>
+										<div class="flex items-center gap-[12px]">
+											<img src="./images/card-image-4.png" alt="card image" />
+											<span
+												class="font-medium text-[12px] md:text-[16px] text-[#000000]"
+												>1-lit / 2.5 km</span
+											>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div
+								data-aos="flip-left"
+								class="w-full sm:max-w-[300px] py-[30px] px-[24px] bg-[#f5f5f5] md:max-w-[373px] rounded-[16px]"
+							>
+								<h3
+									class="font-semibold text-[24px] text-[#000000] leading-[100%]"
+								>
+									Nissan Versa
+								</h3>
+								<span
+									class="font-medium text-[16px] leading-[100%] text-[#555555]"
+									>Compact Car</span
+								>
+								<img src="./images/nissan-versa.png" alt="Ford fiesta image" />
+								<div class="flex items-center gap-[54px]">
+									<div class="">
+										<div class="flex items-center gap-[12px]">
+											<img src="./images/card-image-1.png" alt="card image" />
+											<span>5 Seats</span>
+										</div>
+										<div class="flex items-center gap-[12px]">
+											<img src="./images/card-image-2.png" alt="card image" />
+											<span>21+ Years</span>
+										</div>
+									</div>
+									<div class="">
+										<div class="flex items-center gap-[12px]">
+											<img src="./images/card-image-3.png" alt="card image" />
+											<span>Automatic</span>
+										</div>
+										<div class="flex items-center gap-[12px]">
+											<img src="./images/card-image-4.png" alt="card image" />
+											<span>1-lit / 2.5 km</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div
+								data-aos="flip-left"
+								class="w-full sm:max-w-[300px] py-[30px] px-[24px] bg-[#f5f5f5] md:max-w-[373px] rounded-[16px]"
+							>
+								<h3
+									class="font-semibold text-[24px] text-[#000000] leading-[100%]"
+								>
+									Toyota Corolla
+								</h3>
+								<span
+									class="font-medium text-[16px] leading-[100%] text-[#555555]"
+									>Mid-size Car</span
+								>
+								<img
+									src="./images/toyota-corolla.png"
+									alt="Ford fiesta image"
+								/>
+								<div class="flex items-center gap-[54px]">
+									<div class="">
+										<div class="flex items-center gap-[12px]">
+											<img src="./images/card-image-1.png" alt="card image" />
+											<span>5 Seats</span>
+										</div>
+										<div class="flex items-center gap-[12px]">
+											<img src="./images/card-image-2.png" alt="card image" />
+											<span>21+ Years</span>
+										</div>
+									</div>
+									<div class="">
+										<div class="flex items-center gap-[12px]">
+											<img src="./images/card-image-3.png" alt="card image" />
+											<span>Automatic</span>
+										</div>
+										<div class="flex items-center gap-[12px]">
+											<img src="./images/card-image-4.png" alt="card image" />
+											<span>1-lit / 2.5 km</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div
+								data-aos="flip-left"
+								class="w-full sm:max-w-[300px] py-[30px] px-[24px] bg-[#f5f5f5] md:max-w-[373px] rounded-[16px]"
+							>
+								<h3
+									class="font-semibold text-[24px] text-[#000000] leading-[100%]"
+								>
+									Nissan Rogue
+								</h3>
+								<span
+									class="font-medium text-[16px] leading-[100%] text-[#555555]"
+									>Mid-size SUV</span
+								>
+								<img src="./images/nissan-rogue.png" alt="Ford fiesta image" />
+								<div class="flex items-center gap-[54px]">
+									<div class="">
+										<div class="flex items-center gap-[12px]">
+											<img src="./images/card-image-1.png" alt="card image" />
+											<span>5 Seats</span>
+										</div>
+										<div class="flex items-center gap-[12px]">
+											<img src="./images/card-image-2.png" alt="card image" />
+											<span>21+ Years</span>
+										</div>
+									</div>
+									<div class="">
+										<div class="flex items-center gap-[12px]">
+											<img src="./images/card-image-3.png" alt="card image" />
+											<span>Automatic</span>
+										</div>
+										<div class="flex items-center gap-[12px]">
+											<img src="./images/card-image-4.png" alt="card image" />
+											<span>1-lit / 2.5 km</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div
+								data-aos="flip-left"
+								class="w-full sm:max-w-[300px] py-[30px] px-[24px] bg-[#f5f5f5] md:max-w-[373px] rounded-[16px]"
+							>
+								<h3
+									class="font-semibold text-[24px] text-[#000000] leading-[100%]"
+								>
+									Chevy Traverse
+								</h3>
+								<span
+									class="font-medium text-[16px] leading-[100%] text-[#555555]"
+									>Full-size SUV
+								</span>
+								<img
+									src="./images/chevy-traverse.png"
+									alt="Ford fiesta image"
+								/>
+								<div class="flex items-center gap-[54px]">
+									<div class="">
+										<div class="flex items-center gap-[12px]">
+											<img src="./images/card-image-1.png" alt="card image" />
+											<span>5 Seats</span>
+										</div>
+										<div class="flex items-center gap-[12px]">
+											<img src="./images/card-image-2.png" alt="card image" />
+											<span>21+ Years</span>
+										</div>
+									</div>
+									<div class="">
+										<div class="flex items-center gap-[12px]">
+											<img src="./images/card-image-3.png" alt="card image" />
+											<span>Automatic</span>
+										</div>
+										<div class="flex items-center gap-[12px]">
+											<img src="./images/card-image-4.png" alt="card image" />
+											<span>1-lit / 2.5 km</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div
+								data-aos="flip-left"
+								class="w-full sm:max-w-[300px] py-[30px] px-[24px] bg-[#f5f5f5] md:max-w-[373px] rounded-[16px]"
+							>
+								<h3
+									class="font-semibold text-[24px] text-[#000000] leading-[100%]"
+								>
+									Nissan Altima
+								</h3>
+								<span
+									class="font-medium text-[16px] leading-[100%] text-[#555555]"
+									>Full-size Car</span
+								>
+								<img src="./images/nissan-altima.png" alt="Ford fiesta image" />
+								<div class="flex items-center gap-[54px]">
+									<div class="">
+										<div class="flex items-center gap-[12px]">
+											<img src="./images/card-image-1.png" alt="card image" />
+											<span>5 Seats</span>
+										</div>
+										<div class="flex items-center gap-[12px]">
+											<img src="./images/card-image-2.png" alt="card image" />
+											<span>21+ Years</span>
+										</div>
+									</div>
+									<div class="">
+										<div class="flex items-center gap-[12px]">
+											<img src="./images/card-image-3.png" alt="card image" />
+											<span>Automatic</span>
+										</div>
+										<div class="flex items-center gap-[12px]">
+											<img src="./images/card-image-4.png" alt="card image" />
+											<span>1-lit / 2.5 km</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="w-[180px] mx-auto">
+						<button
+							class="hover:text-[#299764] hover:bg-transparent hover:border-[#299764] duration-300 border-[1.5px] bg-[#299764] text-[#ffffff] text-[12px] sm:text-[18px] leading-[100%] font-medium py-[18px] px-[30px] rounded-[100px]"
+						>
+							View all cars
+						</button>
+					</div>
+				</div>
+			</section>
+			<section class="py-[100px] bg-[#F5F5F5]">
+				<div class="containers">
+					<div class="flex">
+						<div class="w-full lg:w-[364px] bg-white py-[70px] px-[70px]">
+							<div class="flex items-center gap-[8px]">
+								<img src="./images/google-img.png" alt="Google img" />
+								<span class="font-medium text-[16px] text-[#4285F4]"
+									>From Google</span
+								>
+							</div>
+							<h2 class="font-medium text-[38px] leading-[50px] text-[#000000]">
+								Hear what the community is saying
+							</h2>
+							<div class="mt-[62px]">
+								<p class="font-medium text-[14px] text-[#555555] mb-[16px]">
+									More interesting reviews on Instagram
+								</p>
+								<button
+									class="hover:text-[#8B2AB2] hover:border-[#8B2AB2] duration-300 text-[18px] text-[#EE2A7B] font-medium bg-transparent py-[18px] px-[50px] border-[1.5px] rounded-[100px] border-[#D22A8A]"
+								>
+									Instagram
+								</button>
+							</div>
+						</div>
+						<div
+							class="w-full lg:w-[863px] bg-[#299764] py-[50px] px-[40px] flex gap-[20px] overflow-hidden"
+						>
+							<div
+								class="w-[420px] bg-white rounded-[16px] py-[24px] px-[24px]"
+							>
+								<div
+									class="w-[372px] flex items-center justify-between mb-[14px]"
+								>
+									<img src="./images/avatar.png" alt="avatar img" />
+									<div class="">
+										<h3 class="font-semibold text-[16px] text-[#000000]">
+											Savannah Nguyen
+										</h3>
+										<a
+											class="font-normal text-[14px] text-[#555555]"
+											href="mailto:savannahnguyen@gmail.com"
+											>savannahnguyen@gmail.com</a
+										>
+									</div>
+									<img src="./images/google-card.png" alt="google img" />
+								</div>
+								<p
+									class="text-[14px] font-normal text-[#000000] leading-[20px] mb-[50px]"
+								>
+									Sagittis sed tortor, elementum vitae varius sodales
+									consectetur. Vitae arcu ut morbi bibendum ullamcorper feugiat.
+									Venenatis hendrerit cursus egestas sit ornare nunc vulputate
+									aliquam sapien. Pulvinar nunc consectetur nibh consectetur
+									mollis mauris est mauris amet. Sed hac vehicula id et dui
+									morbi quam pulvinar condimentum. Senectus sed varius interdum
+									nunc, arcu vulputate massa.
+								</p>
+								<div class="">
+									<span>Star rating:</span>
+									<img src="./images/stars.png" alt="stars img" />
+								</div>
+							</div>
+							<div
+								class="w-[420px] bg-white rounded-[16px] py-[24px] px-[24px]"
+							>
+								<div
+									class="w-[372px] flex items-center justify-between mb-[14px]"
+								>
+									<img src="./images/avatar-second.png" alt="avatar img" />
+									<div class="">
+										<h3 class="font-semibold text-[16px] text-[#000000]">
+											Ronald Richards
+										</h3>
+										<a
+											class="font-normal text-[14px] text-[#555555]"
+											href="mailto:ronaldrichards@gmail.com"
+											>ronaldrichards@gmail.com</a
+										>
+									</div>
+									<img src="./images/google-card.png" alt="google img" />
+								</div>
+								<p
+									class="text-[14px] font-normal text-[#000000] leading-[20px] mb-[129px]"
+								>
+									Placerat pulvinar in amet sem id gravida nisi leo. A dignissim
+									est pellentesque mi quisque vel mi ut. Porttitor blandit
+									auctor odio a ornare felis tortor bibendum molestie.
+								</p>
+								<div class="">
+									<span>Star rating:</span>
+									<img src="./images/stars.png" alt="stars img" />
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="py-[160px]">
+				<div class="containers">
+					<h3 class="font-medium text-[#000000] text-[24px] mb-[34px]">
+						More than 50 brands of cars
+					</h3>
+					<div class="flex items-center gap-[66px]">
+						<img class="images" src="./images/ford-img.png" alt="ford images" />
+						<img
+							class="images"
+							src="./images/nissan-img.png"
+							alt="nissan images"
+						/>
+						<img
+							class="images"
+							src="./images/toyota-logo.png"
+							alt="toyota images"
+						/>
+						<img
+							class="images"
+							src="./images/dodge-img.png"
+							alt="dodge images"
+						/>
+						<img
+							class="images"
+							src="./images/hyundai-img.png"
+							alt="hyundai images"
+						/>
+						<img class="images" src="./images/jeep-img.png" alt="jeep images" />
+					</div>
+				</div>
+			</section>
+		</main>
+		<script src="https://cdn.tailwindcss.com"></script>
+		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+		<script>
+			tailwind.config = {
+				theme: {
+					extend: {},
+				},
+			}
+			AOS.init()
+		</script>
+	</body>
+</html>
